@@ -1,0 +1,35 @@
+{
+  "name": "go-ccs-interpreter",
+  "version": "1.0",
+  "description": "A program that translates PseuGo-programs into CCS-processes for pseuco.com as part of a Bachelor's thesis at the TU Berlin.",
+  "main": "index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "src/**/*",
+    "dist/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@git.tu-berlin.de:nomedataba/go-ccs-interpreter.git"
+  },
+  "author": "Mohamed Atabay",
+  "license": "GPL-3.0",
+  "scripts": {
+    "generate-parser": "node generate-parser.mjs",
+    "build": "npm run generate-parser && tsc",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@pseuco/ccs-interpreter": "git+https://dgit.cs.uni-saarland.de/pseuco/pseuco-ccs-interpreter.git#86c53c44e112b518c43dfcfba48f2cc5052c1803",
+    "@types/mocha": "^10.0.2",
+    "@types/node": "^20.8.4",
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/parser": "^6.7.5",
+    "eslint": "^8.51.0",
+    "mocha": "^10.2.0",
+    "ts-node": "^10.9.1",
+    "ts-pegjs": "^3.1.0",
+    "typescript": "^5.2.2"
+  }
+}
